@@ -38,17 +38,18 @@ function drawPiece() {
 
     if (target.className.indexOf('active') < 0) {
         target.className += ' active ' + color;
+        // if(gobangArr[i]){
+        gobangArr[i][j] = color;
+        console.log(gobangArr[i])
+        chessWin(i, j, color);
+        // }
+        color = color == 'black' ? 'white' : 'black';
+        if (!win) {
+            logStatus(color);
+        }
     }
 
-    // if(gobangArr[i]){
-    gobangArr[i][j] = color;
-    console.log(gobangArr[i])
-    chessWin(i, j, color);
-    // }
-    color = color == 'black' ? 'white' : 'black';
-    if (!win) {
-        logStatus(color);
-    }
+
 }
 
 function resetGobang() {
